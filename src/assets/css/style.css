@@ -1,79 +1,149 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;600;700&display=swap');
 
 :root {
-    --primary-color: rgb(17, 86, 102);
-    --primary-color-darker: rgb(9, 48, 56);
+    --primary-color: #F8EF00;
+    --secundary-color: #00F0FF;
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     outline: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: var(--primary-color);
-    font-family: 'Open sans', sans-serif;
+    background: #000;
+    font-family: 'Tomorrow', sans-serif;
     font-size: 1.3em;
     line-height: 1.5em;
 }
 
 .container {
-    max-width: 640px;
+    max-width: 580px;
     margin: 50px auto;
-    background: #fff;
+    background: #000;
     padding: 20px;
     border-radius: 10px;
     display: block;
 }
 
 h1 {
+    font-weight: 700;
     text-align: center;
     color: var(--primary-color);
 }
 
-
-.senha-gerada {
-    font-size: 2em;
-    color: var(--primary-color-darker);
-    margin: 40px 0;
+label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #fafafa;
+    gap: 8px;
 }
 
-.qtd-caracteres {
-    height: 27px;
-    width: 50px;
-    border: 1px none black;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.493);
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 18px;
+}
+
+.senha-gerada {
+    padding: 12px;
+    width: 100%;
+    color: var(--secundary-color);
+    margin-top: 44px;
+    border: 2px solid white;
+    border-color: var(--secundary-color);
+    background-color: hsl(184, 100%, 10%);
+}
+
+input[type=range] {
+    width: 100%;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    display: block;
+    margin: 10px 0 0 0;
+    position: relative;
+  }
+
+input[type="range"]::-webkit-slider-runnable-track{
+    background: var(--secundary-color);
+    outline: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    height: 16px;
+    width: 16px;
+    background: var(--primary-color);
+    -webkit-appearance: none;
+    margin: -7px 0 0 0;
+    outline: none;
 }
 
 input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.493);
+    -webkit-appearance: none;
+    background-color: #000;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
 }
 
 input[type="checkbox"]:checked {
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.493);
+    background-color: var(--primary-color);
 }
 
 button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.425);
-    /* display: inline-block; */
-    border-radius: 15px;
     padding: 15px;
-    margin: 20px 0px;
-    font-size: 0.8em;
+    padding-left: 30px;
+    margin-top: 16px;
+    margin-bottom: 36px;
+    font-size: 0.68em;
     background-color: var(--primary-color);
-    color: white;
-    font-weight: bold;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer; 
+    position: relative;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 42px;
+    background-color: #FFF;
+    background-color: #000;
+}
+
+button::after {
+    left: -10px;
+    transform: rotate(39deg)
+}
+
+.material-symbols-outlined {
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 button:hover {
     transition: ease-in-out 300ms;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.425);
-    background-color: var(--primary-color-darker);
+    background-color: hsl(58, 100%, 35%);
+}
+
+.slider-value {
+    color: #fafafa;
 }

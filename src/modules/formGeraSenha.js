@@ -8,10 +8,19 @@ const chkNumeros = document.querySelector('.chk-numeros');
 const chkSimbolos = document.querySelector('.chk-simbolos');
 const gerarSenha = document.querySelector('.gerar-senha')
 
+const slider = document.querySelector('.qtd-caracteres');
+const sliderValue = document.querySelector('.slider-value');
+
+slider.addEventListener('input', function() {
+    const value = slider.value;
+    sliderValue.innerHTML = value;
+});
+
 export default () => {
     gerarSenha.addEventListener('click', () => {
         senhaGerada.innerHTML = gera();
     })
+    
 };
 
 function gera() {
